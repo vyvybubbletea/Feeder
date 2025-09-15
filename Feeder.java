@@ -19,6 +19,18 @@ public class  Feeder {
      */
     public void simulateOneDay(int numBirds)
     {
+        if(Math.random() < 0.05) currentFood = 0;
+        else
+        {
+            Feeder f = new Feeder(500);
+            System.out.println(f);
+            System.out.println(f.getCurrentFood());
+            f.simulateOneDay(12);
+            System.out.println(f.getCurrentFood());
+            f = new Feeder(1000);
+            f.simulateOneDay(22);
+            System.out.println(f.getCurrentFood());
+        }
     }
 
     /**
@@ -28,6 +40,13 @@ public class  Feeder {
      */
     public int simulateManyDays(int numBirds, int numDays) 
     {
+        if(Math.random() < 0.05) currentFood = 0;
+        {
+            int eaten = (int) (Math.random() * 41) + 10;
+            eaten *= numBirds;
+            currentFood -= eaten;
+            if (currentFood < 0) currentFood = 0;
+        }
         return 0;
     }
 }
